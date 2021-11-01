@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build -f dockerfile.dev -t ashishbadgujardocker124/docker-react ../../
+        run: docker build -f ../../dockerfile.dev -t ashishbadgujardocker124/docker-react 
 
   test:
     runs-on: ubuntu-latest

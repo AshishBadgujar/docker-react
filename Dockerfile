@@ -1,9 +1,9 @@
 #build phase
-FROM node:alpine as builder
+FROM node:17.0.1-alpine as builder
 WORKDIR /app
 COPY package.json .
-RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent 
+RUN export NODE_OPTIONS=--openssl-legacy-provider
+RUN npm install 
 COPY . .
 RUN npm run build 
 

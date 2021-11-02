@@ -1,8 +1,8 @@
 #build phase
-FROM node:17.0.1-alpine as builder
+FROM node:16.13.0-alpine as builder
 WORKDIR /app
 COPY package.json .
-RUN export NODE_OPTIONS=--openssl-legacy-provider
+
 RUN npm install 
 COPY . .
 RUN npm run build 

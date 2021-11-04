@@ -13,12 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --tag dkrashi/docker-react
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
+        run: docker build . -f Dockerfile.dev --tag dkrashi/docker-react
       - name: run the docker image
         run: docker run dkrashi/docker-react npm run test
+
+        

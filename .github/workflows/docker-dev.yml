@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file dockerfile.dev --tag ashishbadgujardocker124/docker-react
+        run: docker build . --tag dkrashi/docker-react
 
   test:
     runs-on: ubuntu-latest
@@ -21,4 +21,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: run the docker image
-        run: docker run ashishbadgujardocker124/docker-react npm run test
+        run: docker run dkrashi/docker-react npm run test

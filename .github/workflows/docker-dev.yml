@@ -7,13 +7,19 @@ on:
     branches: [dev]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         run: docker build . -f Dockerfile.dev --tag dkrashi/docker-react
+     
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
       - name: run the docker image
         run: docker run dkrashi/docker-react npm test -- --coverage
 

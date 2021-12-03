@@ -20,7 +20,7 @@ jobs:
       - name: Build the docker image
         run: docker build . --file Dockerfile --tag react-app:latest
       - name: docker push
-        run: docker push $DOCKER_USER/demo-app
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-app
 
 
 

@@ -18,7 +18,7 @@ jobs:
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build the docker image
-        run: docker build . --file Dockerfile --tag react-app:latest
+        run: docker build . --file Dockerfile --tag dkrashi/demo-app
       - name: docker push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-app
 

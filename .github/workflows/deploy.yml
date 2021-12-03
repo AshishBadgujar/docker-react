@@ -20,7 +20,7 @@ jobs:
       - name: Build the docker image
         run: docker build . --file Dockerfile --tag dkrashi/demo-app:1.0
       - name: docker push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-app
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-app:1.0
 
 
 
